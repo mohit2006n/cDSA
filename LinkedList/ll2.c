@@ -46,7 +46,7 @@ void display() {
     printf("\n");
 }
 
-void toBeging(){
+void insertBeging(){
     int data;
     struct node *newNode;
     newNode = (struct node *)malloc(sizeof(struct node));
@@ -63,7 +63,7 @@ void toBeging(){
     }
 }
 
-void toEnd(){
+void insertEnd(){
     int data;
     struct node *newNode, *temp;
     newNode = (struct node *)malloc(sizeof(struct node));
@@ -83,7 +83,7 @@ void toEnd(){
     }
 }
 
-void toAnyPosition() {
+void insertAnyPosition() {
     int pos, data, i;
     struct node *newNode, *temp;
 
@@ -114,7 +114,7 @@ void toAnyPosition() {
     }
 }
 
-void afterSpecificPosition() {
+void insertAfterSpecificPosition() {
     int pos, data;
     struct node *newNode, *temp;
 
@@ -143,7 +143,7 @@ void deleteBegining() {
 
     if(head == NULL){
         printf("No linkied list found....");
-    }else if (head -> next ==NULL){
+    }else if (head -> next == NULL){
         free(head);
     }else{
         head = head->next;
@@ -162,7 +162,7 @@ void deleteEnd() {
     }
 }
 
-void deleteAtPosition() {
+void deleteAnyPosition() {
     int pos, i;
     struct node *temp, *toDelete;
 
@@ -210,22 +210,22 @@ int main() {
                 display();
                 break;
             case 3:
-                toBeging();
+                insertBeging();
                 break;
             case 4:
-                toEnd();
+                insertEnd();
                 break;
             case 5:
-                toAnyPosition();
+                insertAnyPosition();
                 break;
             case 6:
-                afterSpecificPosition();
+                insertAfterSpecificPosition();
                 break;
             case 7:
                 deleteBegining();
                 break;
             case 8:
-                deleteAtPosition();
+                deleteAnyPosition();
                 break;
             case 9:
                 exit(0);
