@@ -14,11 +14,14 @@ int main() {
 
     printf("Enter the index postion at which you want to delete an element: ");
     scanf("%d", &pos);
+
     for (i = 0; i < 10; i++) {
-        if(i>pos)
-        arr[i] = arr[i + 1];
+        if(i >= pos)
+            arr[i] = arr[i + 1];
     }
+
     arr = (int *)realloc(arr, 9 * sizeof(int));
+
     for(i=0;i<9;i++){
         printf("%d ",arr[i]);
     }   

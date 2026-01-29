@@ -114,7 +114,7 @@ void insertAnyPosition() {
     }
 }
 
-void insertAfterSpecificPosition() {
+void insertAfterSpecificValue() {
     int pos, data;
     struct node *newNode, *temp;
 
@@ -219,7 +219,7 @@ int main() {
                 insertAnyPosition();
                 break;
             case 6:
-                insertAfterSpecificPosition();
+                insertAfterSpecificValue();
                 break;
             case 7:
                 deleteBegining();
