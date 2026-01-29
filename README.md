@@ -70,8 +70,8 @@ if TOS = MAX -1 it is full (MAX is the size of the array)
 # Operation in Stack
 
 1. peep
-2. # push
-3. # pop
+2. push
+3. pop
 
 
 # Queue
