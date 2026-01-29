@@ -1,3 +1,4 @@
-_c/
-.vscode/
+.vscode
 .DS_Store
+
+_c/
