@@ -1,65 +1,91 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX 5
+#define MAX 10
 
-typedef struct {
-    int arr[MAX];
-    int front;
-    int rear;
-} CircularQueue;
+int front = -1, rear = -1;
+int queue[MAX];
 
-CircularQueue* createQueue() {
-    CircularQueue* q = (CircularQueue*)malloc(sizeof(CircularQueue));
-    q->front = -1;
-    q->rear = -1;
-    return q;
-}
+void insert() {
+    int val;
 
-int isFull(CircularQueue* q) {
-    return (q->rear + 1) % MAX == q->front;
-}
-
-int isEmpty(CircularQueue* q) {
-    return q->front == -1;
-}
-
-void enqueue(CircularQueue* q, int value) {
-    if (isFull(q)) {
-        printf("Queue is full\n");
+    if ((front == 0 && rear == MAX - 1) || (rear + 1) % MAX == front) {
+        printf("Queue Overflow (Full)\n");
         return;
     }
-    if (q->front == -1) q->front = 0;
-    q->rear = (q->rear + 1) % MAX;
-    q->arr[q->rear] = value;
-    printf("Enqueued: %d\n", value);
+
+    printf("Enter value to Insert: ");
+    scanf("%d", &val);
+
+    // If empty
+    if (front == -1) {
+        front = 0;
+        rear = 0;
+    } 
+    else {
+        rear = (rear + 1) % MAX;
+    }
+
+    queue[rear] = val;
+    printf("%d inserted\n", val);
 }
 
-int dequeue(CircularQueue* q) {
-    if (isEmpty(q)) {
+void delete() {
+    if (front == -1) {
+        printf("Queue Underflow (Empty)\n");
+        return;
+    }
+
+    int deleted = queue[front];
+    printf("Deleted: %d\n", deleted);
+
+    if (front == rear) {
+        front = -1;
+        rear = -1;
+    } 
+    else {
+        front = (front + 1) % MAX;
+    }
+}
+
+void display() {
+    if (front == -1) {
         printf("Queue is empty\n");
-        return -1;
+        return;
     }
-    int value = q->arr[q->front];
-    if (q->front == q->rear) {
-        q->front = q->rear = -1;
-    } else {
-        q->front = (q->front + 1) % MAX;
+
+    printf("Queue elements: ");
+
+    int i = front;
+    while (1) {
+        printf("%d ", queue[i]);
+        if (i == rear)
+            break;
+        i = (i + 1) % MAX;
     }
-    printf("Dequeued: %d\n", value);
-    return value;
+
+    printf("\n");
 }
 
 int main() {
-    CircularQueue* q = createQueue();
-    
-    enqueue(q, 10);
-    enqueue(q, 20);
-    enqueue(q, 30);
-    
-    dequeue(q);
-    dequeue(q);
-    
-    free(q);
+    int ch;
+    printf("\n--- MENU ---\n1. INSERT\n2. DELETE\n3. DISPLAY\n4. EXIT\n");
+
+    while (1) {
+        printf("\nEnter your choice: ");
+        if (scanf("%d", &ch) != 1) {
+            printf("Invalid input\n");
+            break;
+        }
+
+        switch (ch) {
+            case 1: insert(); break;
+            case 2: delete(); break;
+            case 3: display(); break;
+            case 4: exit(0);
+            default: printf("Invalid choice!\n");
+        }
+    }
+
     return 0;
 }
