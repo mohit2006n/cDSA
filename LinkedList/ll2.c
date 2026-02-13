@@ -9,10 +9,10 @@ struct node {
 struct node *head = NULL;
 
 void create(int n) {
-    int i, data;
+    int data;
     struct node *newNode, *temp;
 
-    for (i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         newNode = (struct node *)malloc(sizeof(struct node));
         printf("Enter value for node %d: ", i + 1);
         scanf("%d", &data);
