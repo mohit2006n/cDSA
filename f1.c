@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 int main(){
-    int n = 10;
-    if(n>0){
-        printf("Number is +ve\n");
+    int n = 10, m = 20;
+    if(n>n){
+        printf("Large = %d",n);
+    }else{
+        printf("Large = %d",m);
     }
     return 0;
 }
