@@ -4,9 +4,10 @@ int main(){
     long sales, dis;
     printf("Enter the sales : ");
     scanf("%ld",&sales);
+    
     // if(sales >= 10000){
     //     dis = (sales * 0.3);
-    // }else if(sales >= 50000 && sales < 100000){
+    // }else if(sales >= 50000 && sale1s < 100000){
     //     dis = (sales * 0.2);
     // }else if(sales >= 10000 && sales < 50000){
     //     dis = (sales * 0.1);
