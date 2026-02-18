@@ -159,7 +159,7 @@ int main() {
                 toAnyPosition();
                 break;
             case 6:
-                afterSpecificPosition();
+                insertAfterSpecificValue();
                 break;
             case 7:
                 exit(0);
