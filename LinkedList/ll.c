@@ -9,10 +9,10 @@ struct node {
 struct node *head = NULL;
 
 void create(int n) {
-    int i, data;
+    int data;
     struct node *newNode, *temp;
 
-    for (i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) {
         newNode = (struct node *)malloc(sizeof(struct node));
         printf("Enter data for node %d: ", i + 1);
         scanf("%d", &data);
@@ -46,7 +46,7 @@ void display() {
 }
 
 void toBeging(){
-    int i, data, n;
+    int data, n;
     struct node *newNode, *temp;
     newNode = (struct node *)malloc(sizeof(struct node));
     printf("Enter value for node: ");
@@ -63,7 +63,7 @@ void toBeging(){
 }
 
 void toEnd(){
-    int i, data, n;
+    int data, n;
     struct node *newNode, *temp;
     newNode = (struct node *)malloc(sizeof(struct node));
     printf("Enter value for node: ");
@@ -83,7 +83,7 @@ void toEnd(){
 }
 
 void toAnyPosition() {
-    int pos, data, i;
+    int pos, data;
     struct node *newNode, *temp;
 
     newNode = (struct node *)malloc(sizeof(struct node));
@@ -95,7 +95,7 @@ void toAnyPosition() {
     newNode->data = data;
 
     temp = head;
-    for (i = 1; i < pos-1 && temp != NULL; i++) {
+    for (int i = 1; i < pos-1 && temp != NULL; i++) {
         temp = temp->next;
     }
 

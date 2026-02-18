@@ -179,7 +179,7 @@ void deleteAnyPosition() {
     for (i = 1; i < pos - 1 && temp != NULL; i++) {
         temp = temp->next;
     }
-
+    // 10 20 30 40
     toDelete = temp->next;
     temp->next = toDelete->next;
     free(toDelete);
