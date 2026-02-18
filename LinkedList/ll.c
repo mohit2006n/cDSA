@@ -112,6 +112,9 @@ void insertAfterSpecificValue() {
     printf("Enter data: ");
     scanf("%d", &data);
 
+    newNode = (struct node *)malloc(sizeof(struct node));
+    newNode->data = data;
+
     temp = head;
     while (temp != NULL && temp->data != pos) {
         temp = temp->next;
@@ -120,8 +123,6 @@ void insertAfterSpecificValue() {
     if (temp == NULL) {
         printf("Value %d not found in list.\n", pos);
     } else {
-        newNode = (struct node *)malloc(sizeof(struct node));
-        newNode->data = data;
         newNode->next = temp->next;
         temp->next = newNode;
     }
