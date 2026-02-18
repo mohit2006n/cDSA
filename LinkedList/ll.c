@@ -103,24 +103,28 @@ void toAnyPosition() {
     temp->next = newNode;
 }
 
-void afterSpecificPosition() {
-    int pos, data, i;
+void insertAfterSpecificValue() {
+    int pos, data;
     struct node *newNode, *temp;
 
-    newNode = (struct node *)malloc(sizeof(struct node));
-    printf("Enter data: ");
-    scanf("%d", &data);
     printf("Enter the value after which you want to insert the data: ");
     scanf("%d", &pos);
-
-    newNode->data = data;
+    printf("Enter data: ");
+    scanf("%d", &data);
 
     temp = head;
-    while (temp -> data != pos) {
+    while (temp != NULL && temp->data != pos) {
         temp = temp->next;
     }
-    newNode->next = temp->next;
-    temp->next = newNode;
+
+    if (temp == NULL) {
+        printf("Value %d not found in list.\n", pos);
+    } else {
+        newNode = (struct node *)malloc(sizeof(struct node));
+        newNode->data = data;
+        newNode->next = temp->next;
+        temp->next = newNode;
+    }
 }
 
 int main() {
