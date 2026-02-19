@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main(){
-    int s,i,f;
+    int s, i;
     int arr[10];
     printf("Enter the array elements: ");
     for(int i = 0; i<10;i++){
@@ -9,7 +9,7 @@ int main(){
     }
     printf("Enter the elements you want to search: ");
     scanf("%d",&s);
-    int t = 0;
+    int t, f = 0;
     for(int i = 0; i<10;i++){
         if(arr[i] == s){
             f = 1;
