@@ -77,3 +77,11 @@ if TOS = MAX -1 it is full (MAX is the size of the array)
 # Queue
 
 It follows the principle of "First in, First out" (FIFO), where the first element added to the queue is the first one to be removed.
+
+
+# Sorting & Searching
+
+Sorting techniques: Bubble Sort, Selection Sort, Insertion Sort, Counting Sort.
+Heaps: Max Heap, Min Heap, Heap Sort. Searching techniques: Linear and
+Binary search methods (recursive and non-recursive). Hashing: Different hash
+functions, Collision resolution techniques.
